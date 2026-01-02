@@ -101,6 +101,7 @@
 						<configuration>
 							<threads>4</threads>
 							<timestampedReports>false</timestampedReports>
+							<mutationThreshold>95</mutationThreshold>
 						</configuration>
 						<executions>
 							<execution>

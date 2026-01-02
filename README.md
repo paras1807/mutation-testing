@@ -1,17 +1,24 @@
-# Mutation Testing
+# FizzBuzz
 
-### What is mutation testing?
+The **requirements** of the kata are simple:
 
-Mutation testing assesses test suite quality by intentionally introducing small faults (mutations) into the code to see if existing tests can detect them; if tests pass despite the fault, it reveals weak spots in your tests, showing they don't cover enough, while tests failing (killing the mutant) prove the test suite's effectiveness, helping improve code and find hidden bugs.
+* Write a Java program that prints a line for each number from 1 to 100.
+  * For multiples of three, print Fizz instead of the number.
+  * For multiples of five, print Buzz instead of the number.
+  * For numbers that are multiples of both three and five, print FizzBuzz instead of the number.
+* Have a look at the FizzBuzz.java and FizzBuzzTest.java.
+* execute the below command to run mutation-testing.
 
-### AgeService
+```
 
-Checkout branch age-service and follow steps in readme.
+mvn clean -Ppitest test
 
-### Calculator
+```
 
-Checkout branch calculator and follow steps in readme.
+You will see the test fails with message **"Mutation score of 90 is below threshold of 95"**
 
-### Exercise: FizzBuzz
+##### What's next
 
-Checkout branch fizzbuzz and follow steps in readme
+1. Open pom.xml and see we have added a configuration of `mutationThreshold` to `95`
+2. Open `target/pit-reports/index.html` in browser to check what's wrong.
+3. Fix the issue so that the compilation is successful.

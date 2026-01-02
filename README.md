@@ -1,17 +1,24 @@
-# Mutation Testing
+# Age Service
 
-### What is mutation testing?
+##### What's next
 
-Mutation testing assesses test suite quality by intentionally introducing small faults (mutations) into the code to see if existing tests can detect them; if tests pass despite the fault, it reveals weak spots in your tests, showing they don't cover enough, while tests failing (killing the mutant) prove the test suite's effectiveness, helping improve code and find hidden bugs.
+* Have a look at AgeServiceTest.
+* Now run the test with coverage.
 
-### AgeService
+You will see the coverage is 100% (both line and branch) but is the method correctly tested?
 
-Checkout branch age-service and follow steps in readme.
+###### Let's find out
 
-### Calculator
+* execute the below command to run mutation-testing. We are using https://pitest.org/quickstart/ for it.
 
-Checkout branch calculator and follow steps in readme.
+```
 
-### Exercise: FizzBuzz
+mvn clean -Ppitest test
 
-Checkout branch fizzbuzz and follow steps in readme
+```
+
+* Open `target/pit-reports/index.html` in browser.
+
+##### Final Step: Let's fix it
+
+Fix the test and find out what's changed in mutation-testing report
